@@ -1,0 +1,10 @@
+.jumbotron{
+    background: url('../images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    color: #fff;
+}
+.jumbotron h3, .jumbotron .lead{
+    text-align: right;
+}

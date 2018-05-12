@@ -1,0 +1,14 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 60px;
+    background-color: #5c4a53;
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+
+.footer a{
+    color: #fff;
+}
