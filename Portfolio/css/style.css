@@ -1,0 +1,211 @@
+/****** SETUP STYLES ******/
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: sans-serif;
+}
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a, a:visited{
+    text-decoration: none;
+}
+/****** END SETUP STYLES ******/
+
+/****** NAV STYLES ******/
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease;
+}
+nav li a, nav li a:visited{color: #000;}
+
+/* THE FOLLOWING STYLES ONLY SHOW ONCE SCROLLED */
+.navHighlight{
+    background-color: rgba(0,0,0,0.7);
+    transition: all 0.2s ease;
+}
+.navHighlight ul li a{
+    color: #fff;
+}
+/* END SCROLL STYLES */
+
+
+nav ul{
+    width: 80%;
+    margin: 0 auto;
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li:hover{
+    background-color: rgba(0,0,0,0.4);
+}
+nav ul li a{
+    display: inline-block; /* makes the entire li clickable as a link. */
+    padding: 20px;
+}
+.toggle{
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(0,0,0,1);
+    color: #fff;
+    text-align: right;
+    font-size: 25px;
+    display: none;
+
+}
+/****** END NAV STYLES ******/
+
+/****** FULL PAGE IMAGE ******/
+#hero{
+    width: 100%;
+    height: 100vh;
+    background: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/****** END FULL PAGE IMAGE ******/
+
+/****** CONTENT STYLES ******/
+.contentBlock{
+    padding: 20px;
+}
+.contentBlock:nth-child(even){
+    background-color: #d5d5d5;
+}
+.contentBlock .blockContainer{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+aside p{
+    padding: 10px;
+    text-align: justify;
+    line-height: 2em;
+    font-family: 'Roboto Slab', serif;
+}
+.skillContainer{
+    display: flex;
+    align-items: center;
+
+}
+.skillContainer .skill{
+    flex: 1;
+    padding: 30px;
+    text-align: center;
+    max-height: 120px;
+}
+.skill i{
+    display: block;
+    font-size: 3em;
+}
+.skill#html5{background: #ccc;}
+.skill#css3{background: #727272;}
+.skill#js{background: #645d54;}
+.skill#des{background: #707f64;}
+/****** END CONTENT STYLES ******/
+
+/****** MISC STYLES ******/
+#toTop{
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    font-size: 3em;
+    transition: 0.3s ease;
+    color: rgba(0,0,0,0);
+}
+.showToTop{
+    transition: 0.3s ease;
+    color: rgba(0,0,0,1);
+}
+/****** END MISC STYLES ******/
+
+/****** FORM STYLES ******/
+input, textarea, button{
+    outline: none;
+    border: none;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    color: #000;
+    width: 100%;
+}
+input, textarea{
+    display: block;
+    width: 100%;
+    padding: 15px;
+}
+input::placeholder, textarea::placeholder{
+    opacity: 0.7;
+    color: #727272;
+}
+form button{
+    display: block;
+    padding: 20px;
+}
+form button:hover{
+    background-color: #adcac7;
+}
+/****** END FORM STYLES ******/
+
+
+/****** MEDIA QUERIES ******/
+@media(max-width: 580px){
+    /* NAV STYLES */
+    .toggle{
+        display: block; /* shows our dropdown bars */
+    }
+    nav ul{
+        width: 100%;    /* makes the drop-down list items go across the entire width */ 
+        display: none;  /* works with the '.showing' selector & js */
+    }
+    .showing{
+        display: block; /* basically in mobile it's hidden by default and clicking it unhides it. */
+    }
+    nav ul li{
+        background-color: #000; /* styles for the actual drop-down links. */
+        text-align: center;
+        width: 100%; /* this property makes each link become a new line. */
+    }
+    nav ul li:hover{
+        background-color: rgba(0,0,0,0.4); /* just experimenting with a "reverse" highlight of sorts */
+    }
+    nav ul li a, nav ul li a:visited{
+        color: #fff;
+    }
+    /* END NAV STYLES */
+
+    /* CONTENT STYLES */
+    .contentBlock{
+        padding: 5px;
+    }
+    .contentBlock .blockContainer{
+       width: 100%;
+    }
+    .contentBlock article h3{
+        text-align: center;
+    }
+    aside p{
+        text-align: left;
+        line-height: 2em;
+    }
+    .skillContainer{
+        flex-wrap: wrap;
+    }
+    /* END CONTENT STYLES */
+    
+    /* FORM STYLES */
+    form button{
+        background-color: #adcac7;
+    }
+    /* END FORM STYLES */
+}
+/****** END MEDIA QUERIES ******/
